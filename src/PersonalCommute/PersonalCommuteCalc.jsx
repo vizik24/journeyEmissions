@@ -82,6 +82,10 @@ export default function PersonalCalculator({
     setIsLoading(true)
     setError(null)
 
+    console.log('homePostcode:', homePostcode)
+    console.log('workPostcode:', workPostcode)
+    console.log('travelMethod:', travelMethod)
+
     try {
       const response = await fetch("https://carbonfreecommutes-backend.onrender.com/single-journey", {
         method: "POST",
