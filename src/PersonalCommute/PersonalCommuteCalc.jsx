@@ -325,50 +325,6 @@ export default function PersonalCalculator({
           </div>
         )}
 
-        {/* Company CTA Component - shown after calculation */}
-        {carbonEmissions !== null && (
-          <div className="card w-full max-w-3xl mx-auto mt-8 mb-8 p-6 bg-base-100 shadow-sm">
-            {/* CTA heading */}
-            <h2 className="text-xl font-bold text-base-content mb-2">
-              Want to reduce your company's commuting emissions?
-            </h2>
-
-            {/* CTA description */}
-            <p className="mb-4 text-base-content/80">
-              Our platform helps businesses track, report, and reduce their carbon footprint from employee commuting.
-            </p>
-
-            {/* Email submission form */}
-            <form onSubmit={handleRequestInfo} className="mt-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-grow">
-                  {/* Email input field */}
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                    placeholder="Enter your email"
-                    className="input input-bordered w-full"
-                    disabled={isSubmitting}
-                  />
-
-                  {/* Error message display */}
-                  {submitStatus === "error" && <p className="mt-1 text-error text-sm">{errorMessage}</p>}
-
-                  {/* Success message display */}
-                  {submitStatus === "success" && (
-                    <p className="mt-1 text-success text-md font-semibold">Thank you! We'll be in touch soon.</p>
-                  )}
-                </div>
-
-                {/* Submit button */}
-                <button type="submit" disabled={isSubmitting} className="btn btn-primary">
-                  {isSubmitting ? "Sending..." : "Request More Information"}
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
 
         {/* Information cards at the bottom */}
         <div className="grid gap-4 md:grid-cols-2">
